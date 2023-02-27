@@ -10,7 +10,7 @@ export default async function handler(
   const response = await fetch('https://replicate.com/cjwbw/pastel-mix', {
     method: 'POST',
     headers: {
-      Authorization: `Token ${process.env.REPLICATE_API_TOKEN}`,
+      Authorization: `Token 066bfd7582fdf0b23bf8baf79774e0001c326ad8`,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
