@@ -7,14 +7,14 @@ export default async function handler(
   const response = await fetch('https://api.replicate.com/v1/predictions', {
     method: 'POST',
     headers: {
-      Authorization: `Token ${process.env.REPLICATE_API_TOKEN}`,
+      Authorization: `Token 066bfd7582fdf0b23bf8baf79774e0001c326ad8`,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
       // Pinned to a specific version of Stable Diffusion
       // See https://replicate.com/stability-ai/stable-diffussion/versions
       version:
-        '6359a0cab3ca6e4d3320c33d79096161208e9024d174b2311e5a21b6c7e1131c',
+        '436b051ebd8f68d23e83d22de5e198e0995357afef113768c20f0b6fcef23c8b',
 
       // This is the text prompt that will be submitted by a form on the frontend
       input: {
@@ -26,7 +26,7 @@ export default async function handler(
         num_outputs: 1,
         num_inference_steps: req.body.num_inference_steps,
         guidance_scale: req.body.guidance_scale,
-        scheduler: req.body.scheduler,
+        scheduler: 'DPMSolverMultistep',
         seed: req.body.seed,
       },
     }),
