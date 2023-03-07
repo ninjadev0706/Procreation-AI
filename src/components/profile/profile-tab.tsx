@@ -19,14 +19,6 @@ const tabMenu = [
     title: 'Collection',
     path: 'collection',
   },
-  {
-    title: 'Portfolio',
-    path: 'portfolio',
-  },
-  {
-    title: 'History',
-    path: 'history',
-  },
 ];
 
 export default function ProfileTab() {
@@ -47,7 +39,7 @@ export default function ProfileTab() {
           ))}
         </div>
       </TabPanel>
-      <TabPanel className="focus:outline-none">
+      {/* <TabPanel className="focus:outline-none">
         <div className="space-y-8 md:space-y-10 xl:space-y-12">
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-2 2xl:grid-cols-3 3xl:grid-cols-4">
             {authorWallets?.map((wallet) => (
@@ -75,12 +67,12 @@ export default function ProfileTab() {
             </div>
           </div>
         </div>
-      </TabPanel>
+      </TabPanel> */}
       <TabPanel className="focus:outline-none">
-        <div className="space-y-8 xl:space-y-9">
+        {/* <div className="space-y-8 xl:space-y-9">
           <TransactionSearchForm />
           <TransactionHistory />
-        </div>
+        </div> */}
       </TabPanel>
     </ParamTab>
   );

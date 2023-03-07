@@ -44,11 +44,7 @@ export default function CollectionCard({ item, className = '' }: CardProps) {
         />
       </div>
       <div className="absolute top-0 left-0 z-[5] flex h-full w-full flex-col justify-between bg-gradient-to-t from-black p-5 md:p-6">
-        <AnchorLink
-          href={slug}
-          className="absolute top-0 left-0 z-10 h-full w-full"
-        />
-        <div className="flex justify-between gap-3">
+        {/* <div className="flex justify-between gap-3">
           <div
             className="inline-flex h-8 shrink-0 items-center rounded-2xl bg-white/20 px-4 text-xs font-medium uppercase -tracking-wide text-white
           backdrop-blur-[40px]"
@@ -56,32 +52,24 @@ export default function CollectionCard({ item, className = '' }: CardProps) {
             {name}
           </div>
           {image && <Avatar image={image} alt={name} shape="rounded" />}
-        </div>
-        <div className="block">
+        </div> */}
+        <div className="my-3 block flex h-full flex-col justify-between text-center">
           <h2 className="mb-1.5 truncate text-lg font-medium -tracking-wider text-white">
             {title}
           </h2>
-          <div className="text-sm font-medium -tracking-wide text-[#B6AAA2]">
+          {/* <div className="text-sm font-medium -tracking-wide text-[#B6AAA2]">
             {number_of_artwork} Artworks
+          </div> */}
+          <div>
+            <AnchorLink
+              href={slug}
+              className="relative z-10 mt-3.5 inline-flex items-center rounded-3xl bg-white/20 p-2 backdrop-blur-[40px]"
+            >
+              <div className="truncate text-sm -tracking-wide text-white ltr:ml-2 ltr:pr-2 rtl:mr-2 rtl:pl-2">
+                View Details
+              </div>
+            </AnchorLink>
           </div>
-          <AnchorLink
-            href={user?.slug}
-            className="relative z-10 mt-3.5 inline-flex items-center rounded-3xl bg-white/20 p-2 backdrop-blur-[40px]"
-          >
-            <Avatar
-              //@ts-ignore
-              image={user?.avatar}
-              alt={user?.name}
-              size="xs"
-              width={24}
-              height={24}
-              className="rounded-full"
-            />
-
-            <div className="truncate text-sm -tracking-wide text-white ltr:ml-2 ltr:pr-2 rtl:mr-2 rtl:pl-2">
-              @{user?.name}
-            </div>
-          </AnchorLink>
         </div>
       </div>
     </div>

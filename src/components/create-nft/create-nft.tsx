@@ -192,7 +192,7 @@ export default function CreateNFT() {
   const handleCreate = async (e: any) => {
     e.preventDefault();
 
-    console.log("vaue => ", isModal)
+    console.log('vaue => ', isModal);
 
     if (isModal === 'stable') {
       let response;
@@ -594,9 +594,11 @@ export default function CreateNFT() {
                 <br />
                 {/* Prompt */}
                 <div className="mb-8">
-                  <InputLabel title="Prompt" important />
-                  <Input
-                    type="text"
+                  <InputLabel
+                    title="What would you like to create?"
+                    important
+                  />
+                  <Textarea
                     placeholder="Enter a prompt to display an image"
                     name="prompt"
                     value={values.prompt}
@@ -606,9 +608,8 @@ export default function CreateNFT() {
 
                 {/* Negative Prompt */}
                 <div className="mb-8">
-                  <InputLabel title="Negative Prompt" important />
-                  <Input
-                    type="text"
+                  <InputLabel title="What do you not want to see?" important />
+                  <Textarea
                     placeholder="Enter a negative prompt to display an image"
                     name="negative_prompt"
                     value={values.negative_prompt}
@@ -635,10 +636,11 @@ export default function CreateNFT() {
                             <Listbox.Option key={option.id} value={option}>
                               {({ selected }) => (
                                 <div
-                                  className={`flex cursor-pointer items-center rounded-md px-3 py-2 text-sm text-gray-900 transition dark:text-gray-100  ${selected
-                                    ? 'bg-gray-200/70 font-medium dark:bg-gray-600/60'
-                                    : 'hover:bg-gray-100 dark:hover:bg-gray-700/70'
-                                    }`}
+                                  className={`flex cursor-pointer items-center rounded-md px-3 py-2 text-sm text-gray-900 transition dark:text-gray-100  ${
+                                    selected
+                                      ? 'bg-gray-200/70 font-medium dark:bg-gray-600/60'
+                                      : 'hover:bg-gray-100 dark:hover:bg-gray-700/70'
+                                  }`}
                                 >
                                   {option.name}
                                 </div>
@@ -672,10 +674,11 @@ export default function CreateNFT() {
                             <Listbox.Option key={option.id} value={option}>
                               {({ selected }) => (
                                 <div
-                                  className={`flex cursor-pointer items-center rounded-md px-3 py-2 text-sm text-gray-900 transition dark:text-gray-100  ${selected
-                                    ? 'bg-gray-200/70 font-medium dark:bg-gray-600/60'
-                                    : 'hover:bg-gray-100 dark:hover:bg-gray-700/70'
-                                    }`}
+                                  className={`flex cursor-pointer items-center rounded-md px-3 py-2 text-sm text-gray-900 transition dark:text-gray-100  ${
+                                    selected
+                                      ? 'bg-gray-200/70 font-medium dark:bg-gray-600/60'
+                                      : 'hover:bg-gray-100 dark:hover:bg-gray-700/70'
+                                  }`}
                                 >
                                   {option.name}
                                 </div>
@@ -812,10 +815,11 @@ export default function CreateNFT() {
                             <Listbox.Option key={option.id} value={option}>
                               {({ selected }) => (
                                 <div
-                                  className={`flex cursor-pointer items-center rounded-md px-3 py-2 text-sm text-gray-900 transition dark:text-gray-100  ${selected
-                                    ? 'bg-gray-200/70 font-medium dark:bg-gray-600/60'
-                                    : 'hover:bg-gray-100 dark:hover:bg-gray-700/70'
-                                    }`}
+                                  className={`flex cursor-pointer items-center rounded-md px-3 py-2 text-sm text-gray-900 transition dark:text-gray-100  ${
+                                    selected
+                                      ? 'bg-gray-200/70 font-medium dark:bg-gray-600/60'
+                                      : 'hover:bg-gray-100 dark:hover:bg-gray-700/70'
+                                  }`}
                                 >
                                   {option.name}
                                 </div>
@@ -967,12 +971,11 @@ export default function CreateNFT() {
                 )}
               </div>
               <div className="p-5">
-                <div className="text-sm font-medium text-black dark:text-white">
-                  Pulses Of Imagination #214
-                </div>
-                <div className="mt-4 text-lg font-medium text-gray-900 dark:text-white">
-                  0.40 ETH
-                </div>
+                {values && values.name !== '' && (
+                  <div className="text-sm font-medium text-black dark:text-white">
+                    {values.name}
+                  </div>
+                )}
                 {isNFT !== '' && isSelect && (
                   <div>
                     <a href={`${isNFT}`} target="_blank" rel="noreferrer">

@@ -18,6 +18,7 @@ const routes = {
   portfolio: '/profile?view=portfolio',
   history: '/profile?view=history',
   classic: '/classic',
+  support: '/support',
 };
 
 export default routes;

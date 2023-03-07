@@ -16,19 +16,9 @@ export const menuItems = [
     href: routes.home,
   },
   {
-    name: 'Farm',
-    icon: <FarmIcon />,
-    href: routes.farms,
-  },
-  {
     name: 'Swap',
     icon: <ExchangeIcon />,
     href: routes.swap,
-  },
-  {
-    name: 'Liquidity',
-    icon: <PoolIcon />,
-    href: routes.liquidity,
   },
   {
     name: 'Explore NFTs',
@@ -49,6 +39,11 @@ export const menuItems = [
     name: 'Profile',
     icon: <ProfileIcon />,
     href: routes.profile,
+  },
+  {
+    name: 'AI Support',
+    icon: <PoolIcon />,
+    href: routes.support,
   },
   {
     name: 'Vote',
