@@ -5,7 +5,7 @@ import { TagIcon } from '@/components/icons/tag-icon';
 
 const PriceOptions = [
   {
-    name: 'Stable Diffusion',
+    name: 'Mid Journey',
     value: 'stable',
     icon: <TagIcon className="h-5 w-5 sm:h-auto sm:w-auto" />,
   },
